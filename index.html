@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Application</title>
+    <link rel="shortcut icon" href="./assests/timer.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="./src/main.js" defer></script>
+
+</head>
+
+<body onload="realtimeClock()">
+    <div class="body">
+        <div id="clock"></div>
+        <div id="date"></div>
+        <h1>timer application</h1>
+        <div class="main-buttons">
+            <button type="button" class="btn" id="Timer">Timer</button>
+            <button type="button" class="btn" id="StopWatch">Stopwatch</button>
+        </div>
+        <div class="inputdiv" id="inputDiv" style="display: none;">
+            <div class="indivual-ip">
+                <label for="iphour">Hours</label>
+                <input type="number" name="iphour" id="iphour" placeholder="00" min="00" max="24">
+            </div>
+            <div class="indivual-ip">
+                <label for="ipminute">minutes</label>
+                <input type="number" name="ipminute" id="ipminute" placeholder="00" min="00" max="60">
+            </div>
+            <div class="indivual-ip">
+                <label for="ipsecond">seconds</label>
+                <input type="number" name="ipsecond" id="ipsecond" placeholder="00" min="00" max="24">
+            </div>
+        </div>
+        <div class="display">
+            <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>
+        </div>
+        <div class="display-text">
+            <span>Hour</span><span>:</span> <span>minutes</span><span>:</span><span>seconds</span>
+        </div>
+        <div class="action-buttons">
+            <button class="btn" style="display: none;" id="start">start</button>
+            <button class="btn" style="display: none;" id="pause">pause</button>
+            <button class="btn" style="display: none;" id="stop">stop</button>
+            <button class="btn" style="display: none;" id="reset">reset</button>
+        </div>
+
+</body>
+<script>
+    function realtimeClock() {
+        var rtClock = new Date();
+        var hours = rtClock.getHours();
+        var minutes = rtClock.getMinutes();
+        var seconds = rtClock.getSeconds();
+        var day = rtClock.getDay();
+        var month = rtClock.getMonth();
+        var date = rtClock.getDate();
+        var year = rtClock.getFullYear();
+
+        const days = ["Monday", "Tuesday", "Wednesday", "Friday", "Saturday", "Sunday"];
+
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        var amPm = (hours < 12) ? "AM" : "PM";
+
+        hours = (hours > 12) ? hours - 12 : hours;
+
+        function format(input) {
+            return input < 10 ? `0${input}` : input;
+        }
+
+        hours = format(hours);
+        minutes = format(minutes);
+        seconds = format(seconds);
+
+        document.getElementById('clock').innerText = hours + " : " + minutes + " : " + seconds + "  " + amPm;
+
+        document.getElementById('date').innerText = days[day] + ", " + months[month] + " " + date + ", " + year;
+
+        var t = setTimeout(realtimeClock, 500);
+    }
+</script>
+
+</html>

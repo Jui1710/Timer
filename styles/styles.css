@@ -1,0 +1,177 @@
+color{
+    /* background */
+    color: #d9d9d9;
+    /* buttons */
+    color: #b8d4d7;
+    /* onhover buttons */
+    color: #dae8e9;
+    /* text */
+    color: #fbfcfd; 
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+/* border: 2px solid red; */
+}
+@font-face {
+    font-family: "digital";
+    src: url(../assests/font/ds_digital/DS-DIGI.TTF);
+}
+body{
+    background-color:#b8d4d7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#clock{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    color: #dae8e9;
+    text-align: center;
+}
+
+#date{
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #dae8e9;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+
+}
+
+h1{
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #fbfcfd;
+    text-align: center;
+    font-size: 4rem;
+
+
+}
+
+.main-buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    background-color: #d9d9d9;
+    border: 2px solid #c3c3c3;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fbfcfd;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    margin: 20px;
+    width: 300px;
+    cursor: pointer;
+}
+.btn:hover{
+    border-color: #fbfcfd;
+    background-color: #fbfcfd;
+    color: #c3c3c3;
+}
+.btn:disabled{
+    cursor: none;
+    pointer-events: none;
+}
+.display{
+    color: #fbfcfd;
+    font-family: "digital";
+    font-size: 7rem;
+    display: flex;
+    justify-content: center;
+}
+
+.display-text{
+    color: #fbfcfd;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+}
+.display-text>span{
+    padding: 0px 2px;
+    font-size: 1rem;
+}
+.action-buttons{
+    display: flex;
+    justify-content: center;
+}
+.action-buttons>button{
+    width: 200px;
+    font-size: 1.5rem;
+}
+
+.inputdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.indivual-ip{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.indivual-ip>label{
+    color:#fbfcfd;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.indivual-ip>input{
+    outline: none;
+    width: 90px;
+    height: 90px;
+    font-family: "digital";
+    font-size: 3rem;
+    padding: 10px;
+}
+
+@media (max-width:700px){
+.main-buttons{
+    flex-wrap: wrap-reverse;
+}
+}
+
+@media (max-width:576px){
+#clock, #date{
+    font-size: 1rem;
+}
+h1{
+    font-size: 2rem;
+    letter-spacing: 5px;
+}
+.btn{
+    
+    font-size: 1rem;
+    padding: 10px;
+    margin: 20px;
+    width: 200px;
+    cursor: pointer;
+}
+.display{
+    font-size: 3rem;
+}
+.action-buttons>button{
+    width: 100px;
+    font-size: 1rem;
+}
+.indivual-ip>input{
+    width: 70px;
+    height: 50px;
+    font-size: 2rem;
+    padding: 10px;
+}
+.indivual-ip>label{
+    padding: 5px;
+}
+
+}
+
