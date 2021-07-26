@@ -106,13 +106,15 @@ Timer.addEventListener('click', event => {
             document.getElementById('minute').innerText = format(minute);
             document.getElementById('hour').innerText = format(hour);
             if ((hour === 0) && (minute === 0) && (second === 0)) {
-                start.disabled = false;
+                pause.style.display = 'none';
+                start.style.display = 'block';
                 clearInterval(time1);
                 ip_hour.disabled = false;
                 ip_min.disabled = false;
                 ip_sec.disabled = false;
                 StopWatch.disabled = false;
                 alert("Timer finished.");
+
                 isTimerOn = false;
             }
             pause.addEventListener('click', event => {
